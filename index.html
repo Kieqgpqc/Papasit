@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ปภสิฏฐ์ สุภาผล</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1c1d21;
+    --muted:#6b7280;
+    --line:#ececef;
+    --bg:#fafaf9;
+    --card:#ffffff;
+    --accent:#3b5bdb;
+    --accent-soft:#eef1fd;
+    --radius:14px;
+    --maxw:920px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Sarabun',system-ui,sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .container{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  ::selection{background:var(--accent);color:#fff}
+
+  /* nav */
+  nav{
+    position:sticky;top:0;z-index:10;
+    background:rgba(250,250,249,.82);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .container{display:flex;align-items:center;justify-content:space-between;height:62px}
+  nav .name{font-weight:700;font-size:1.02rem;letter-spacing:.01em}
+  nav .name .dot{color:var(--accent)}
+  nav .links{display:flex;gap:26px;font-size:.93rem;color:var(--muted)}
+  nav .links a{position:relative;transition:color .2s}
+  nav .links a:hover{color:var(--accent)}
+  @media(max-width:520px){nav .links{display:none}}
+
+  /* hero */
+  header{padding:72px 0 60px}
+  header .container{display:flex;gap:44px;align-items:center}
+  @media(max-width:600px){header .container{flex-direction:column;text-align:center;gap:30px}}
+  .photo{position:relative;flex-shrink:0}
+  .photo img{
+    width:160px;height:200px;object-fit:cover;border-radius:var(--radius);
+    box-shadow:0 18px 40px -18px rgba(28,29,33,.32);
+  }
+  .photo::after{
+    content:"";position:absolute;inset:auto -10px -10px auto;
+    width:64px;height:64px;border-radius:14px;
+    background:var(--accent-soft);z-index:-1;
+  }
+  header .eyebrow{
+    color:var(--accent);font-size:.78rem;font-weight:600;
+    letter-spacing:.18em;text-transform:uppercase;margin-bottom:10px;
+  }
+  header h1{font-size:2.2rem;font-weight:700;line-height:1.2;margin-bottom:8px}
+  header .sub{color:var(--muted);font-size:1.02rem;margin-bottom:18px}
+  header .motto{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:.92rem;color:var(--ink);
+    background:var(--accent-soft);border-radius:30px;padding:6px 16px;
+  }
+  header .motto b{color:var(--accent);font-weight:600}
+
+  /* sections */
+  section{padding:56px 0}
+  section + section{border-top:1px solid var(--line)}
+  .sec-title{display:flex;align-items:center;gap:12px;margin-bottom:30px}
+  .sec-title .bar{width:22px;height:3px;border-radius:2px;background:var(--accent)}
+  .sec-title h2{font-size:1.35rem;font-weight:700}
+  .sec-title .desc{color:var(--muted);font-size:.92rem;margin-left:auto}
+  @media(max-width:480px){.sec-title .desc{display:none}}
+
+  /* about */
+  .info{
+    display:grid;grid-template-columns:1fr 1fr;gap:14px;
+  }
+  @media(max-width:560px){.info{grid-template-columns:1fr}}
+  .info .row{
+    background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:16px 20px;
+  }
+  .info dt{color:var(--muted);font-size:.8rem;letter-spacing:.02em;margin-bottom:2px}
+  .info dd{font-weight:600;font-size:1.05rem}
+
+  /* media grid */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  @media(max-width:600px){.grid{gap:14px}}
+  .item{transition:transform .25s}
+  .item:hover{transform:translateY(-5px)}
+  .item .frame{
+    border-radius:12px;overflow:hidden;background:#000;
+    box-shadow:0 12px 30px -16px rgba(28,29,33,.3);
+    transition:box-shadow .25s;
+  }
+  .item:hover .frame{box-shadow:0 20px 44px -18px rgba(28,29,33,.45)}
+  .item .frame img{width:100%;aspect-ratio:2/3;object-fit:cover}
+  .item.sq .frame img{aspect-ratio:1/1}
+  .item .t{font-weight:600;font-size:.95rem;margin-top:12px;line-height:1.35}
+  .item .s{color:var(--muted);font-size:.83rem}
+
+  /* footer */
+  footer{
+    border-top:1px solid var(--line);
+    padding:44px 0;text-align:center;color:var(--muted);font-size:.9rem;
+  }
+  footer .q{
+    font-size:1.15rem;color:var(--ink);font-weight:600;margin-bottom:14px;
+  }
+  footer .q span{color:var(--accent)}
+  footer a{
+    display:inline-flex;align-items:center;gap:7px;
+    color:var(--accent);font-weight:500;margin-top:6px;
+  }
+  footer a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="container">
+      <div class="name">ปภสิฏฐ์ สุภาผล<span class="dot">.</span></div>
+      <div class="links">
+        <a href="#about">เกี่ยวกับ</a>
+        <a href="#cinema">ภาพยนตร์</a>
+        <a href="#music">ดนตรี</a>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <div class="container">
+      <div class="photo">
+        <img src="profile/profile.jpg" alt="ปภสิฏฐ์ สุภาผล">
+      </div>
+      <div>
+        <div class="eyebrow">Portfolio</div>
+        <h1>นายปภสิฏฐ์ สุภาผล</h1>
+        <p class="sub">นักเรียนชั้นมัธยมศึกษาปีที่ 6/6 · เลขที่ 14</p>
+        <span class="motto">คติประจำใจ <b>“ ช่างมัน ”</b></span>
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="container">
+      <div class="sec-title">
+        <span class="bar"></span>
+        <h2>เกี่ยวกับผม</h2>
+        <span class="desc">ข้อมูลส่วนตัว</span>
+      </div>
+      <dl class="info">
+        <div class="row"><dt>ชื่อ–นามสกุล</dt><dd>นายปภสิฏฐ์ สุภาผล</dd></div>
+        <div class="row"><dt>ระดับชั้น</dt><dd>มัธยมศึกษาปีที่ 6/6</dd></div>
+        <div class="row"><dt>เลขที่</dt><dd>14</dd></div>
+        <div class="row"><dt>คติประจำใจ</dt><dd>“ ช่างมัน ”</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="cinema">
+    <div class="container">
+      <div class="sec-title">
+        <span class="bar"></span>
+        <h2>ภาพยนตร์ที่ชอบ</h2>
+        <span class="desc">หนังที่ชอบดู</span>
+      </div>
+      <div class="grid">
+        <div class="item">
+          <div class="frame"><img src="hobby/cinema/Band_of_Brothers.png" alt="Band of Brothers"></div>
+          <div class="t">Band of Brothers</div>
+          <div class="s">มินิซีรีส์สงคราม</div>
+        </div>
+        <div class="item">
+          <div class="frame"><img src="hobby/cinema/Lord%20of%20the%20ring.png" alt="The Lord of the Rings"></div>
+          <div class="t">The Lord of the Rings</div>
+          <div class="s">แฟนตาซี</div>
+        </div>
+        <div class="item">
+          <div class="frame"><img src="hobby/cinema/Final%20Destination.png" alt="Final Destination"></div>
+          <div class="t">Final Destination</div>
+          <div class="s">สยองขวัญ</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="music">
+    <div class="container">
+      <div class="sec-title">
+        <span class="bar"></span>
+        <h2>เพลงที่ชอบ</h2>
+        <span class="desc">อัลบั้มที่ฟังบ่อย</span>
+      </div>
+      <div class="grid">
+        <div class="item sq">
+          <div class="frame"><img src="hobby/music/Layla.jpg" alt="Layla"></div>
+          <div class="t">Layla</div>
+          <div class="s">Derek and the Dominos</div>
+        </div>
+        <div class="item sq">
+          <div class="frame"><img src="hobby/music/The_Razor_Edge.jpg" alt="The Razors Edge"></div>
+          <div class="t">The Razors Edge</div>
+          <div class="s">AC/DC</div>
+        </div>
+        <div class="item sq">
+          <div class="frame"><img src="hobby/music/livin%20la%20vida%20loca.jpg" alt="Livin la Vida Loca"></div>
+          <div class="t">Livin’ la Vida Loca</div>
+          <div class="s">Ricky Martin</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="q">“ ช่างมัน <span>”</span></div>
+      © 2026 ปภสิฏฐ์ สุภาผล · ม.6/6 เลขที่ 14<br>
+      <a href="https://github.com/Kieqgpqc" target="_blank" rel="noopener">github.com/Kieqgpqc</a>
+    </div>
+  </footer>
+
+</body>
+</html>
